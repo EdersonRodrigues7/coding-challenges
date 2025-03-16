@@ -45,6 +45,14 @@ function mdc(a,b){
     return mdc(b, a%b);
 }
 
-console.log(gcd(7,49));
-console.log(euclid(121,11));
-console.log(mdc(8,140));
+// Algoritmo de Euclides usando while loop
+function GreatestCommonDivisor(a,b){
+    // B monitora o resto da divisão e, enquanto for diferente de zero, A recebe o valor anterior de B
+    while(b !==0){
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}
