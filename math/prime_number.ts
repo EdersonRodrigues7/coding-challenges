@@ -1,4 +1,4 @@
-function isPrime(num){
+const isPrime = function(num: number): boolean {
     if(num <= 1) return false;
 
     for(let i=2; i < num; i++){
@@ -9,5 +9,3 @@ function isPrime(num){
 
     return true;
 }
-
-module.exports = { isPrime };
