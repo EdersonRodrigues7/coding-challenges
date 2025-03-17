@@ -1,20 +1,20 @@
-const {Node} = require('./node');
+import CustomNode from "./customNode.ts";
 
 class Stack {
-    top;
-    size;
+    top: CustomNode | null;
+    size: number;
 
     constructor(){
         this.top = null;
         this.size = 0;
     }
 
-    peek(){
+    peek(): CustomNode | null {
         console.log(this.top);
         return this.top;
     }
 
-    pop(){
+    pop(): CustomNode | null {
         if(!this.top) return null;
         const popItem = this.top;
         this.top = popItem.next;
@@ -22,19 +22,20 @@ class Stack {
         return popItem;
     }
 
-    insert(value){
-        const item = new Node(value, this.top);
+    insert(value): CustomNode {
+        const item = new CustomNode(value, this.top);
         this.top = item;
         this.size++;
-        //console.log(item);
+
         return item;
     }
 
-    size(){
-        console.log(this.size);
+    getSize(): number {
         return this.size;
     }
 }
+
+export default Stack;
 
 const stack = new Stack();
 stack.insert("Dedé");
@@ -42,4 +43,3 @@ stack.insert("Ederson");
 stack.insert("Dedev");
 stack.pop();
 stack.peek();
-// console.log(stack);

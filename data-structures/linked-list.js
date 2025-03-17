@@ -1,4 +1,4 @@
-import Node from "./node";
+const {Node} = require('./node');
   
 class myLinkedList {
   constructor(value){
