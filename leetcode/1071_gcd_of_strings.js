@@ -24,9 +24,13 @@ function greatestCommonDivisorOfStrings(str1, str2){
     // significa que elas não são formadas pelas mesmas substrings
     if(str1 + str2 !== str2 + str1) return "";
     
+    // Verifica a maior palavra
     const [greater, shorter] = str1.length >= str2.length ? [str1.length, str2.length] : [str2.length, str1.length];
+    
+    // Pega o máximo divisor comum
     const gcd = gcd(greater, shorter);
     
+    // Retorna o trecho da palavra do início até o índice MDC
     const result = str1.substring(0, gcd);
     console.log(result);
     return result;    

@@ -13,8 +13,11 @@ var getLargerNumber = function(arr){
 
 var kidsWithCandies = function(candies, extraCandies) {
     const result = [];
+
+    // Verifica qual é maior número de doces
     const reference = getLargerNumber(candies);
 
+    // Adiciona ao resultado somente se a quantidade atual + o bônus é >= à referência
     for(let j=0; j < candies.length; j++){
         result.push(candies[j] + extraCandies >= reference);
     }
